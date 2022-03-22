@@ -1,0 +1,22 @@
+                                                              -----------> 22/03/2022 <-----------
+
+Express.js: It is a fast, robust and asynchronous Model-View-Controller framework for Node.js. It helps to direct server and routes. It helps to design various web applications and based on passing arguments to templates. It allows us to dynamically render HTML Pages. We use Express.js because of its fast-track and high-speed I/O, nonparallel and single-threaded nature, MVC like structure and its Robust API that makes routing easy. Some of the popular frameworks are built on Express.js additionally.
+
+npm list express
+
+Request Object in Express
+
+1.  request.url()       : url of the current Request
+2.  request.method()    : GET / POST
+3.  request.headers()   : Used to read request headers sent from browser to server
+4.  request.query()     : Used to read querystring parameter in the form of object[GET request ]
+5.  request.body()      : Used to read querystring parameter in the form of object[POST request ]
+
+Response Object in Express
+
+1.  response.write()      : Passes string value to the browser
+2.  response.end()        : End the response
+3.  response.header()     : Send response headers from server to browser
+4.  response.status()     : Used to set status code
+5.  response.sendFile()   : Used to read content of the file and send the same response to the browser
+6.  response.send()       : Used to send string / object to the browser.
