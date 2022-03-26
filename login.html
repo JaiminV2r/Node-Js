@@ -1,13 +1,16 @@
-<html>
-
-<head></head>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
 <body>
-    <form method="post" action="http://localhost:2020">
-        <input type="text" name="uname" placeholder="username"> <br><br>
-        <input type="password" name="upwd" placeholder="password"> <br><br>
-        <input type="submit">
+    <form action="/login" method="post">
+        <input type="text" name="uname">
+        <input type="password" name="upwd">
+        <input type="submit" value="login">
     </form>
 </body>
-
 </html>
