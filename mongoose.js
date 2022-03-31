@@ -1,34 +1,53 @@
-//  Connect with mongodb - mongoose                                                            ------------> 17/03/2022 <------------
-// var mongoose = require("mongoose")
-// var EmpSchema = new mongoose.Schema({_id:Number, eno:Number, ename:String, esal:Number, eadd:String}, {versionKey : false})
+const express = require("express");
+const MongoClient = require('mongodb').MongoClient
+const ejs = require("ejs");
+const querystring = require("querystring");
+const app = express();
+const cors= require("cors")
 
-// var EmpModel = mongoose.model("employees",EmpSchema);
-// mongoose.connect("mongodb://localhost/Jaimin");
-// var newEmp = new EmpModel({"_id":1, "eno":101, "ename":"jaimin", "esal":4000, "eadd":"surat"})
-// newEmp.save(afterDataInserted);
-// function afterDataInserted(err){
-//     if(err){
-//         console.log(err);
-//     }
-//     else{
-//         console.log("Data Successfully Inserted in Database Jaimin.");
-//     }
-//     mongoose.disconnect();
-// }
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
+var mongoose = require("mongoose");
+var EmpSchema = new mongoose.Schema(
+  {
+    _id: Number,
+    empname: String,
+    empsal: Number,
+    empadd: String,
+    body: String,
+  },
+  { versionKey: false }
+);
 
-// callback function
-var mongoose = require("mongoose")
-var EmpSchema = new mongoose.Schema({_id:Number, eno:Number, ename:String, esal:Number, eadd:String}, {versionKey : false})
+var EmpModel = mongoose.model("Employee", EmpSchema);
+MongoClient.connect("mongodb://localhost/Jaimin");
 
-var EmpModel = mongoose.model("employees",EmpSchema);
-mongoose.connect("mongodb://localhost/Jaimin");
-var newEmp = new EmpModel({"_id":2, "eno":102, "ename":"hardik", "esal":4000, "eadd":"surat"})
-newEmp.save(function(err){
-    if(err){
-        console.log(err);
-    }
-    else{
-        console.log("Data Successfully Inserted in Database Jaimin.");
+app.get("/", (req, res) => {
+  console.log("No data any here"), res.send("no data in here");
+});
+app.get("/create", (req, res) => {
+  res.sendFile(__dirname + "/views/insertmongoose.html");
+});
+
+app.get("/insert", (req, res) => {
+  res.write("Data in get method");
+  res.end();
+});
+app.post("/insert", (req, res) => {
+  console.log(req.body);
+  var newEmp = new EmpModel(req.body);
+
+  newEmp.save(function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Data Successfully Inserted in Database Jaimin.");
     }
     mongoose.disconnect();
-})
+  });
+});
+
+const port = process.env.port || 7859;
+app.listen(port, () => {
+  console.log("server listen port no.:", port);
+});
