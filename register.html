@@ -1,0 +1,71 @@
+<Html>
+
+<head>
+    <title>
+        Registration Page
+    </title>
+</head>
+
+<body bgcolor="Lightskyblue">
+    <br>
+    <br>
+    <form action="/register" method="post">
+
+        <label> Date: </label>
+        <input type="date" name="date">
+        <label style="margin-left: 50%;">Form no: </label>
+        <input type="text" name="formNo"> <br> <br>
+
+        <label> Name: </label>
+        <input type="text" name="name">
+        <label style="margin-left: 50%;"> DOB: </label>
+        <input type="date" name="DOB"> <br> <br>
+
+        <label> contact: </label>
+        <input type="text" name="contact">
+        <label style="margin-left: 50%;">Email: </label>
+        <input type="text" name="email"> <br> <br>
+
+        <label>
+            Qualification:
+        </label>
+        <select name="qualification">
+            <option value="Qualification">Qualification</option>
+            <option value="BCA">BCA</option>
+            <option value="BBA">BBA</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="MBA">MBA</option>
+            <option value="MCA">MCA</option>
+            <option value="M.Tech">M.Tech</option>
+        </select> <br> <br>
+
+        Address <br> <textarea cols="80" rows="5" value="address" name="address">   </textarea> <br> <br>
+
+        <label>
+            Course:
+        </label>
+        <select name="course">
+            <option value="Course">Course</option>
+            <option value="C">C</option>
+            <option value="C++">C++</option>
+            <option value="node js">node js</option>
+            <option value="flutter">flutter</option>
+            <option value="gaming">gaming</option>
+            <option value="web desing">web desing</option>
+            <option value="python">python</option>
+        </select>
+
+        <lable style="margin-left: 50%;">inquiryfor: </lable><input type="text" name="inqueryfor"> <br> <br>
+
+        <label>Reference</label> <br>
+        <input cols="50" rows="1" name="reference">
+        <br> <br>
+
+        <label> Notes: </label> <br>
+        <textarea cols="50" rows="5" value="address" name="notes">   </textarea> <br><br>
+
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+
+</html>
