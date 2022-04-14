@@ -1,0 +1,20 @@
+body
+    include searchbox 
+
+    h1 Student Details
+    span Student id : #{studentId}
+    br
+    span Student Name : #{stdudentName}
+    br
+    span Student Marks : #{studentMarks}
+    br
+    br
+
+    table(border=1)
+        tr
+            th Name
+            th Marks
+        for s in subjects
+            tr 
+                td #{s.Name}
+                td=s.Marks 
