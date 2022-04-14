@@ -1,0 +1,18 @@
+<body>
+{{>searchbox}}
+<hr>
+    <h1> Student Details </h1>
+    Student id : {{studentId}} <br>
+    Student Name : {{stdudentName}} <br>
+    Student Marks : {{studentMarks}} <br>
+
+    <table border=1>
+        <tr> <th> Subject </th> <th> Marks </th> </tr> <br>
+        {{#subjects}}
+        <tr>
+        <td> {{name}} </td>
+        <td> {{Marks}} </td>
+        </tr>
+        {{/subjects}}
+    </table>
+</body>
