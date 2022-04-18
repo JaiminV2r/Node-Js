@@ -1,4 +1,0 @@
-CONNECTION_URL = 'mongodb://localhost/Jaimin'
-DATABASE_NAME = 'Jaimin'
-COLLECTION_NAME = 'employees'
-PORT = 5050
