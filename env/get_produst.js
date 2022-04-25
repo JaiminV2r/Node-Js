@@ -12,7 +12,7 @@ module1.get('/', (req, res) => {
             });
             db.collection(process.env.COLLECTION_NAME).find().toArray((err, array) => {
                 if(err) throw err
-                else {
+                else {  
                     res.send(array)
                 }
             })
